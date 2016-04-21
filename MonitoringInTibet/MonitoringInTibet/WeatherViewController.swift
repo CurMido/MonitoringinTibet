@@ -1,28 +1,27 @@
 //
-//  GroundViewController.swift
+//  WeatherViewController.swift
 //  MonitoringInTibet
 //
-//  Created by 李伟 on 16/4/10.
+//  Created by 李伟 on 16/4/21.
 //  Copyright © 2016年 liwei. All rights reserved.
 //
 
 import UIKit
 
-class GroundViewController: BaseViewController {
-    
-    var tableView:UITableView!
+class WeatherViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "天气预报"
+        self.view.backgroundColor = UIColor.whiteColor()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "地图", style: .Done, target: self, action: #selector(WeatherViewController.map))
 
         // Do any additional setup after loading the view.
-        self.title = "实时地面数据"
-        self.view.backgroundColor = UIColor.whiteColor()
-        
-        tableView = UITableView(frame: CGRect(x: 0, y: 0, width: width, height: height))
-        
-        self.view.addSubview(tableView)
-
+    }
+    
+    func map(){
+        let map = WeatherMapViewController()
+        self.navigationController?.pushViewController(map, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

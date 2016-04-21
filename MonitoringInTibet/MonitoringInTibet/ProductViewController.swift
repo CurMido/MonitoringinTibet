@@ -12,8 +12,6 @@ import Alamofire
 class ProductViewController: BaseViewController ,UITableViewDelegate,UITableViewDataSource{
     
     var tableview:UITableView!
-    let width = UIScreen.mainScreen().bounds.width
-    let height = UIScreen.mainScreen().bounds.height
     var productArray:NSArray?
     var fileTypeName:NSMutableArray? = []
     

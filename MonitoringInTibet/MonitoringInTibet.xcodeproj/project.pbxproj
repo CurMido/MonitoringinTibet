@@ -29,6 +29,9 @@
 		D0AA87C11CBD4E64003EB780 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0AA87B41CBD4E5D003EB780 /* Alamofire.framework */; };
 		D0AA87C21CBD4E64003EB780 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0AA87B41CBD4E5D003EB780 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D0C2546D1CBBDC5500FEC37E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C2546C1CBBDC5500FEC37E /* BaseViewController.swift */; };
+		D0C51EAE1CC8767E0023C3D2 /* MeteorologicalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C51EAD1CC8767E0023C3D2 /* MeteorologicalCell.swift */; };
+		D0C51EBE1CC8A5080023C3D2 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C51EBD1CC8A5080023C3D2 /* WeatherViewController.swift */; };
+		D0C51EC01CC8A5610023C3D2 /* WeatherMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C51EBF1CC8A5610023C3D2 /* WeatherMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +131,9 @@
 		D02BF6131CBA5B9300F59341 /* SatelliteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SatelliteViewController.swift; sourceTree = "<group>"; };
 		D0AA87A91CBD4E5C003EB780 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		D0C2546C1CBBDC5500FEC37E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		D0C51EAD1CC8767E0023C3D2 /* MeteorologicalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeteorologicalCell.swift; sourceTree = "<group>"; };
+		D0C51EBD1CC8A5080023C3D2 /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		D0C51EBF1CC8A5610023C3D2 /* WeatherMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +168,7 @@
 		D02BF5E21CB9558B00F59341 /* MonitoringInTibet */ = {
 			isa = PBXGroup;
 			children = (
+				D0C51EB61CC8A4D40023C3D2 /* Weather */,
 				D02BF6081CBA590C00F59341 /* Common */,
 				D02BF6071CBA590400F59341 /* Meteorological */,
 				D02BF6061CBA58E200F59341 /* Ground */,
@@ -227,6 +234,7 @@
 		D02BF6071CBA590400F59341 /* Meteorological */ = {
 			isa = PBXGroup;
 			children = (
+				D0C51EAD1CC8767E0023C3D2 /* MeteorologicalCell.swift */,
 				D02BF60B1CBA5AFB00F59341 /* MeteorologicalViewController.swift */,
 			);
 			name = Meteorological;
@@ -255,6 +263,15 @@
 				D0AA87C01CBD4E5D003EB780 /* Alamofire.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D0C51EB61CC8A4D40023C3D2 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				D0C51EBD1CC8A5080023C3D2 /* WeatherViewController.swift */,
+				D0C51EBF1CC8A5610023C3D2 /* WeatherMapViewController.swift */,
+			);
+			name = Weather;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +308,11 @@
 				TargetAttributes = {
 					D02BF5DF1CB9558B00F59341 = {
 						CreatedOnToolsVersion = 7.2;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -394,13 +416,16 @@
 				D02BF6141CBA5B9300F59341 /* SatelliteViewController.swift in Sources */,
 				D02BF60C1CBA5AFB00F59341 /* MeteorologicalViewController.swift in Sources */,
 				D02BF6101CBA5B6000F59341 /* ProductViewController.swift in Sources */,
+				D0C51EC01CC8A5610023C3D2 /* WeatherMapViewController.swift in Sources */,
 				D0C2546D1CBBDC5500FEC37E /* BaseViewController.swift in Sources */,
 				D02419791CBFD7AB00C4512C /* ASToast.swift in Sources */,
 				D02BF60E1CBA5B4400F59341 /* GroundViewController.swift in Sources */,
 				D02BF6121CBA5B7A00F59341 /* RadarViewController.swift in Sources */,
 				D02BF5E41CB9558B00F59341 /* AppDelegate.swift in Sources */,
+				D0C51EAE1CC8767E0023C3D2 /* MeteorologicalCell.swift in Sources */,
 				D02BF5EC1CB9558B00F59341 /* MonitoringInTibet.xcdatamodeld in Sources */,
 				D02BF5FD1CB9FFD000F59341 /* MainChildCellCollectionViewCell.swift in Sources */,
+				D0C51EBE1CC8A5080023C3D2 /* WeatherViewController.swift in Sources */,
 				D02BF5F91CB9F86D00F59341 /* MainViewController.swift in Sources */,
 				D02BF6021CBA505700F59341 /* SetChildCellTableViewCell.swift in Sources */,
 				D00413531CC51416004F90E8 /* ChangePassViewController.swift in Sources */,

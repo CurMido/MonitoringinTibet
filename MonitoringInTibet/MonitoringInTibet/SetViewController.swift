@@ -39,6 +39,21 @@ class SetViewController: UIViewController ,UITableViewDataSource,UITableViewDele
             let changePass = ChangePassViewController()
             self.navigationController?.pushViewController(changePass, animated: true)
         }
+        if (indexPath.row == 3){
+//            let vc = UIViewController()
+//            var target:UIViewController
+//        
+//            for controller in (self.navigationController?.viewControllers)! {
+//                if (controller.isKindOfClass(vc .classForCoder)) {
+//                    target = controller
+//                }
+//            }
+//            
+//            if (target) {
+//                self.navigationController?.popToViewController(target, animated: true)
+//            }
+            self.navigationController?.popToRootViewControllerAnimated(true)
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class MainViewController: UIViewController ,UICollectionViewDataSource,UICollectionViewDelegate{
+import CoreLocation
+class MainViewController: UIViewController ,UICollectionViewDataSource,UICollectionViewDelegate,CLLocationManagerDelegate{
     
     var weather:UIView!
     var child:UICollectionView!
@@ -16,15 +16,21 @@ class MainViewController: UIViewController ,UICollectionViewDataSource,UICollect
     let width = UIScreen.mainScreen().bounds.size.width
     
     let childName = ["实时地面数据","气象报文传输","服务产品","卫星云图","雷达资料","设置"]
+    let childImage = ["network","message","ground","cloud","randar","setting"]
+    
+    let loactionManager:CLLocationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "西藏监控"
         self.view.backgroundColor = UIColor.whiteColor()
         
+        self.navigationController?.navigationBar.hidden = false
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .Done, target: self, action: nil)
         
         weather = UIView(frame: CGRect(x: 0, y: 0, width: width, height: height * 3 - 1))
+        let weatherTapGR:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MainViewController.goWeather))
+        weather.addGestureRecognizer(weatherTapGR)
         
         let layout = UICollectionViewFlowLayout()
         //layout.scrollDirection = .Vertical
@@ -51,6 +57,29 @@ class MainViewController: UIViewController ,UICollectionViewDataSource,UICollect
         self.view.addSubview(child)
         child.registerClass(MainChildCellCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         
+        loactionManager.delegate = self
+        //定位精度
+        loactionManager.desiredAccuracy = kCLLocationAccuracyBest
+        //更新距离
+        loactionManager.distanceFilter = 100
+        //发送授权申请
+        loactionManager.requestAlwaysAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            loactionManager.startUpdatingLocation()
+        }
+        
+    }
+    
+    func goWeather(){
+        let weather = WeatherViewController()
+        self.navigationController?.pushViewController(weather, animated: true)
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let currLocation:CLLocation = locations.last!
+        print("经度\(currLocation.coordinate.longitude)")
+        print("纬度\(currLocation.coordinate.latitude)")
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -64,7 +93,7 @@ class MainViewController: UIViewController ,UICollectionViewDataSource,UICollect
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! MainChildCellCollectionViewCell
         cell.backgroundColor = UIColor.whiteColor()
-        cell.image.image = UIImage(named: "icon180")
+        cell.image.image = UIImage(named: childImage[indexPath.row])
         cell.text.text = childName[indexPath.row]
         
         return cell;

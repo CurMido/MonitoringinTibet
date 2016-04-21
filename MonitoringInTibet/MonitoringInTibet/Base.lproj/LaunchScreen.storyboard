@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,7 +16,38 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="aIi-5h-XIe">
+                                <rect key="frame" x="235" y="144" width="130" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="2nh-Wi-P2r"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="KxD-YJ-g1e"/>
+                                    <constraint firstAttribute="width" constant="130" id="Tpv-5M-xhK"/>
+                                    <constraint firstAttribute="height" constant="130" id="aVD-XS-Ge5"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="西藏监控" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57i-vL-GSW">
+                                <rect key="frame" x="242" y="304" width="116" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="57i-vL-GSW" firstAttribute="top" secondItem="aIi-5h-XIe" secondAttribute="bottom" constant="30" id="5eJ-tW-kYP"/>
+                            <constraint firstItem="57i-vL-GSW" firstAttribute="top" secondItem="aIi-5h-XIe" secondAttribute="bottom" constant="94" id="GKz-7b-So2"/>
+                            <constraint firstItem="aIi-5h-XIe" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LX7-9f-vu8"/>
+                            <constraint firstItem="aIi-5h-XIe" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="124" id="lWN-jm-EH0"/>
+                            <constraint firstItem="57i-vL-GSW" firstAttribute="top" secondItem="aIi-5h-XIe" secondAttribute="bottom" constant="240" id="qe1-mv-5zB"/>
+                            <constraint firstItem="57i-vL-GSW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="y8z-YY-lZG"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="GKz-7b-So2"/>
+                                <exclude reference="qe1-mv-5zB"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -23,4 +55,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="187" height="187"/>
+    </resources>
 </document>

@@ -12,6 +12,9 @@ import Alamofire
 class BaseViewController: UIViewController {
     
     var loading:UIActivityIndicatorView!
+    
+    let width = UIScreen.mainScreen().bounds.size.width
+    let height = UIScreen.mainScreen().bounds.size.height
 
     override func viewDidLoad() {
         super.viewDidLoad()

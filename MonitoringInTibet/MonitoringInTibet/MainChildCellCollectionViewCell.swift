@@ -17,7 +17,8 @@ class MainChildCellCollectionViewCell: UICollectionViewCell {
         let width = self.bounds.size.width
         let height = self.bounds.size.width / 3
         
-        image = UIImageView(frame: CGRect(x: width / 2 - 25 , y: width / 2 - 35, width: 50, height:  50))
+        image = UIImageView(frame: CGRect(x: width / 2 - 20 , y: width / 2 - 30, width: 40, height:  40))
+        image.contentMode = .ScaleAspectFit
         addSubview(image)
         
         text = UILabel(frame: CGRect(x: 0, y: height * 2, width: width, height: height))

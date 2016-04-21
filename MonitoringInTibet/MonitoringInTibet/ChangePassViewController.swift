@@ -18,8 +18,6 @@ class ChangePassViewController: BaseViewController {
     var newPass:UITextField!
     var button:UIButton!
     
-    let width = UIScreen.mainScreen().bounds.width
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

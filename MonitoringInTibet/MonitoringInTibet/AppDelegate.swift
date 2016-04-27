@@ -28,6 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = rootna
         return true
     }
+    
+    
+    //横屏设置
+    func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Portrait
+    }
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

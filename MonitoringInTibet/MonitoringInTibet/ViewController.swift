@@ -34,6 +34,14 @@ class ViewController: BaseViewController ,UITextFieldDelegate{
         //导航栏是否隐藏
         self.navigationController?.navigationBar.hidden = true
         
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if !defaults.boolForKey("guide") {
+            if let guide:GuideViewViewController = GuideViewViewController(){
+                presentViewController(guide, animated: true, completion: nil)
+            }
+        }
+        defaults.setBool(true, forKey: "guide")
+        
         views = UIView(frame: CGRect(x: 0, y: 0, width: viewsWidth, height: viewsWidth + 50))
         views.center = self.view.center
         

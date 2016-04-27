@@ -71,6 +71,11 @@ class MainViewController: UIViewController ,UICollectionViewDataSource,UICollect
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
     func goWeather(){
         let weather = WeatherViewController()
         self.navigationController?.pushViewController(weather, animated: true)
